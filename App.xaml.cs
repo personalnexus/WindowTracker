@@ -10,5 +10,4 @@ namespace WindowTracker
     public partial class App : Application
     {
     }
-
 }

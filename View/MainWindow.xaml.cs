@@ -8,8 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindowTracker.Model;
 
-namespace WindowTracker
+namespace WindowTracker.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -19,6 +20,8 @@ namespace WindowTracker
         public MainWindow()
         {
             InitializeComponent();
+            var configuration = ProcessTrackerConfiguration.LoadFromCommandline(SynchronizationContext.Current);
+            DataContext = new ViewModel.MainViewModel(configuration);
         }
     }
 }
